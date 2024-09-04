@@ -1,7 +1,23 @@
 // This is the startup sequence, 
 AUTOSTART
-//POWERON        // turn on track power
-DONE     // This just ends the startup thread, leaving 2 others running.
+// we need to set all relay pins to HIGH as the board is LOW trigger
+SET(22)
+SET(23)
+SET(24)
+SET(25)
+SET(26)
+SET(27)
+SET(28)
+SET(29)
+SET(30)
+SET(31)
+SET(32)
+SET(33)
+SET(34)
+SET(35)
+SET(36)
+SET(37)
+DONE 
 
 #define PULSE 50 //mSec
 
@@ -10,14 +26,14 @@ VIRTUAL_TURNOUT(id,desc) \
 ALIAS(ali,id) \
 DONE \
 ONCLOSE(id) \
-SET(pc) \
-DELAY(PULSE) \
 RESET(pc) \
+DELAY(PULSE) \
+SET(pc) \
 DONE \
 ONTHROW(id) \
-SET(pt) \
-DELAY(PULSE) \
 RESET(pt) \
+DELAY(PULSE) \
+SET(pt) \
 DONE
 
 // Define the points
